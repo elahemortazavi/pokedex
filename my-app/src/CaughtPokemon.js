@@ -6,9 +6,15 @@ const CaughtPokemon = (props) => {
   // const localTime = date.toLocaleTimeString();
   const [caught, setCaught] = useState([]);
 
+  const [pokemonNameInput, setPokemonNameInput] = useState("");
+
   function upPokemon() {
-    setCaught(caught.concat("Squirtle"));
+    setCaught(caught.concat(pokemonNameInput));
   }
+
+function handleInputChange(event) {
+  setPokemonNameInput(event.target.value);
+}
 
   return (
     <div>
@@ -20,6 +26,13 @@ const CaughtPokemon = (props) => {
           return <li key={index}>{item}</li>;
         })}
       </ul>
+
+      <input
+        type="text"
+        value={pokemonNameInput}
+        onChange={handleInputChange}
+      />
+
       <button onClick={upPokemon}>Add pokemon</button>
     </div>
   );
