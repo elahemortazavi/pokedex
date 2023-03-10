@@ -9,7 +9,10 @@ const CaughtPokemon = (props) => {
   const [pokemonNameInput, setPokemonNameInput] = useState("");
 
   function upPokemon() {
-    setCaught(caught.concat(pokemonNameInput));
+    if (pokemonNameInput !== "") {
+      setCaught(caught.concat(pokemonNameInput));
+      setPokemonNameInput("");
+    }
   }
 
 function handleInputChange(event) {
