@@ -29,6 +29,7 @@ import React from "react";
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
+import PokemonMovesSelector from "./PokemonMovesSelector";
 
 const App = () => {
   function logWhenClicked() {
@@ -41,6 +42,7 @@ const App = () => {
       <Logo appName="Elahe's" handleClick={logWhenClicked} />
       <BestPokemon abilities={["Anticipation", "Adaptability", "Run-Away"]} />
       <CaughtPokemon date={currentDate} />
+      <PokemonMovesSelector />
     </div>
   );
 };
